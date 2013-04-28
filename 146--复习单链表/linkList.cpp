@@ -50,7 +50,7 @@ int length(linkList list)
 	return n;
 
 }
-/*
+
 //插入一个结点
 void insertItem(linkList* plist,int i,Elemtype value)
 {
@@ -61,16 +61,19 @@ void insertItem(linkList* plist,int i,Elemtype value)
 		exit(1);
 	}
 
+cout<<"你将在链表的第"<<i<<"个位置插入值为"<<value
+	<<endl;
 	int n=i-1;
-	node* p=list;
+	node* pre=list;
 	while(n--)
-		p=p->next;
+		pre=pre->next;
 	
 	node* newnode=new node;
 	newnode->data=value;
-	newnode->next=p->next;
-	p->next=newnode;
+	newnode->next=pre->next;
+	pre->next=newnode;
 }
+
 
 //删除一个结点
 void deleteItem(linkList* plist,int i)
@@ -81,6 +84,7 @@ void deleteItem(linkList* plist,int i)
 		cout<<"对不起，你插入的位置不对"<<endl;
 		exit(1);
 	}
+	cout<<"你将删除第"<<i<<"个位置的结点"<<endl;
 	node* p=list;
 	int n=i-1;
 
@@ -106,18 +110,59 @@ Elemtype getvalue(linkList list,int i)
 	node* c=list;
 	while(count--)
 		c=c->next;
+	cout<<"第"<<i<<"个位置的值为"<<c->data<<endl;
 	return c->data;
 }
 //清空一个链表
-void clear(linkList *plist)
+
+int locate(linkList list,Elemtype value)
 {
-	node* c=(*plist)->next;
-	while(c)
+	node* cur=list->next;
+	int i=1;
+	while(cur)
 	{
-		node* n=c->next;	
-		delete c;
-		c=n;
+		if(value==cur->data)	
+		{
+			cout<<"你查询的值"<<value<<"在链表的"
+				<<i<<"位置"<<endl;
+			return i;
+		}
+		cur=cur->next;
+		i++;
 	}
+	cout<<"你要查询的值"<<value<<"不在链表中"<<endl;
+	return 0;
+
+
+}
+Elemtype getpreviousvalue(linkList list,int i)
+{
+	if(i<2||i>length(list))
+	{
+		cout<<"你的输入有错"<<endl;
+		exit(1);
+	}
+
+	int n=i-1; 
+	node* cur=list;
+	while(n--)
+	{
+		cur=cur->next;
+	}
+		return cur->data;	
+}
+
+void clear(linkList* plist)
+{
+	node* cur=(*plist)->next;	
+	while(cur)
+	{
+		node* n=cur->next;	
+		delete cur;
+		cur=n;
+	
+	}
+
 }
 
 //删除一个链表
@@ -135,6 +180,7 @@ void deletelist(linkList* plist)
 
 
 }
+
 //追加一个结点
 void append(linkList* plist,Elemtype value)
 {		
@@ -147,7 +193,7 @@ void append(linkList* plist,Elemtype value)
 	c->next=0;
 	c->data=value;
 
-}*/
+}
 //遍历一个链表
 void traverse(linkList list)
 {
@@ -158,6 +204,24 @@ void traverse(linkList list)
 		cur=cur->next;
 	}
 	cout<<endl;
+
+
+}
+
+
+void merge(linkList a,linkList b,linkList* sum)
+{
+	initLinkList(sum);
+	node* psum=(*sum)->next;
+	int n1=length(a);
+	node* pa=a->next;
+	int n2=length(b);
+	node* pb=b->next;
+	int count=n1+n2;
+	wihle(cout--)
+	{
+			
+	}
 
 
 }

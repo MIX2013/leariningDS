@@ -10,23 +10,29 @@ typedef struct node
 
 void initLinkList(linkList* plist) ;
 void createLinkListHead(linkList* plist);
-/*void createLinkListTail(linkList* plist);
 int length(linkList list);
+
 void insertItem(linkList* plist,int i,Elemtype value);
+
 void deleteItem(linkList* plist,int i);
-//比较难，需要学习
-void reversion(linkList*  plist);
 Elemtype getvalue(linkList list,int i);
 int locate(linkList list,Elemtype value);
 Elemtype getpreviousvalue(linkList list,int i);
-Elemtype getnextvalue(linkList list,int i);
+//保留头节点，其他结点删除
 void clear(linkList* plist);
-void deletelist(linkList* plist);
-void append(linkList* plist,Elemtype value);
-void merge(linkList a,linkList b,linkList* sum);
-void traverse(linkList list);*/
-
+//连头节点也不要，全部删除
+void deletelist(linkList* plist); 
 void traverse(linkList list);
+void append(linkList* plist,Elemtype value);
+
+
+
+
+
+void merge(linkList a,linkList b,linkList* sum);
+void reversion(linkList*  plist);
+void createLinkListTail(linkList* plist);
+
 
 
 
