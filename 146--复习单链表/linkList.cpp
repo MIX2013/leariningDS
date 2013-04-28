@@ -153,7 +153,10 @@ void traverse(linkList list)
 {
 	node* cur=list->next;
 	for(int i=0;i<length(list);i++)
+	{
 		cout<<cur->data<<' ';
+		cur=cur->next;
+	}
 	cout<<endl;
 
 
