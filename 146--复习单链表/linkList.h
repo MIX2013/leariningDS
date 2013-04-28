@@ -28,7 +28,7 @@ void append(linkList* plist,Elemtype value);
 
 
 
-
+//ĞèÒªÍêÉÆ-----
 void merge(linkList a,linkList b,linkList* sum);
 void reversion(linkList*  plist);
 void createLinkListTail(linkList* plist);

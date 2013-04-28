@@ -208,8 +208,8 @@ void traverse(linkList list)
 
 }
 
-
-void merge(linkList a,linkList b,linkList* sum)
+//ÐèÒªÍêÉÆ
+/*void merge(linkList a,linkList b,linkList* sum)
 {
 	initLinkList(sum);
 	node* psum=(*sum)->next;
@@ -224,5 +224,6 @@ void merge(linkList a,linkList b,linkList* sum)
 	}
 
 
-}
+}*/
+
 
